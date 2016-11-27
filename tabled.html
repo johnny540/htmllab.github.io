@@ -1,0 +1,361 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Web Technology</title>
+<meta name="keywords" content="Wooden Blog Template, HTML, CSS" />
+<meta name="description" content="Wooden Blog Template, HTML CSS layout available for free of charge" />
+<link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="jquerycssmenu.css" />
+
+<!--[if lte IE 7]>
+<style type="text/css">
+html .jquerycssmenu{height: 1%;} /*Holly Hack for IE7 and below*/
+</style>
+<![endif]-->
+
+<script type="text/javascript" src="js/jquery.min.1.2.6.js"></script>
+<script type="text/javascript" src="js/jquerycssmenu.js"></script>
+<script type="text/javascript" src="js/jquery.min.1.3.2.js"></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+  var currentPosition = 0;
+  var slideWidth = 750;
+  var slides = $('.slide');
+  var numberOfSlides = slides.length;
+
+  // Remove scrollbar in JS
+  $('#slidesContainer').css('overflow', 'hidden');
+
+  // Wrap all .slides with #slideInner div
+  slides
+    .wrapAll('<div id="slideInner"></div>')
+    // Float left to display horizontally, readjust .slides width
+	.css({
+      'float' : 'left',
+      'width' : slideWidth
+    });
+
+  // Set #slideInner width equal to total width of all slides
+  $('#slideInner').css('width', slideWidth * numberOfSlides);
+
+  // Insert controls in the DOM
+  $('#slideshow')
+    .prepend('<span class="control" id="leftControl">Clicking moves left</span>')
+    .append('<span class="control" id="rightControl">Clicking moves right</span>');
+
+  // Hide left arrow control on first load
+  manageControls(currentPosition);
+
+  // Create event listeners for .controls clicks
+  $('.control')
+    .bind('click', function(){
+    // Determine new position
+	currentPosition = ($(this).attr('id')=='rightControl') ? currentPosition+1 : currentPosition-1;
+    
+	// Hide / show controls
+    manageControls(currentPosition);
+    // Move slideInner using margin-left
+    $('#slideInner').animate({
+      'marginLeft' : slideWidth*(-currentPosition)
+    });
+  });
+
+  // manageControls: Hides and Shows controls depending on currentPosition
+  function manageControls(position){
+    // Hide left arrow if position is first slide
+	if(position==0){ $('#leftControl').hide() } else{ $('#leftControl').show() }
+	// Hide right arrow if position is last slide
+    if(position==numberOfSlides-1){ $('#rightControl').hide() } else{ $('#rightControl').show() }
+  }	
+});
+</script>
+</head>
+<body>
+<div id="templatemo_top_panel_wrapper_outter">
+<div id="templatemo_top_panel_wrapper_inner">
+	<div id="templatemo_top_panel">
+    	<div id="templatemo_menu">
+
+<div id="myjquerymenu" class="jquerycssmenu">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a class="has_submenu" href="#">Unit1</a>
+            	<ul>
+                	<li><a href="tabled.html">Html Tags</a></li>
+                    <li><a href="form.html">Forms</a></li>
+                    <li><a href="tabled.html">Tables</a></li>
+                       <li><a href="#">Frames</a></li>
+                      <li><a href="img.html">Images</a></li>
+                      <li><a href="attx.html">Xml</a></li>
+                         <li><a href="script.html">Javascript</a></li>
+                       
+                </ul>
+            </li>
+	
+<li><a href="hello.html">Java</a>
+
+</li>
+<li><a href="#" class="margin_l10">Servers</a>
+<ul>
+   <li><a href="pws.html">Pws</a></li>
+                    <li><a href="iis.html">iis</a></li>
+                    <li><a href="tom.html">Tomcat</a></li>
+                     <li><a href="apache.html">Apache</a></li>
+                     <li><a href="#">Program</a></ul></li>
+<li><a href="#">Jsp</a>
+  <ul>
+  
+                	<li><a href="jsp.html">Jsp page</a></li>
+                    <li><a href="djsp.html">Deployment of Jsp</a></li>
+                    <li><a href="jelements.html">Jsp Elements</a></li>
+                     <li><a href="jspd.html">Jsp Directives</a></li> 
+                     <li><a href="jspconn.html">Jsp Connection</a></li>
+                      <li><a href="#">Java Bean</a></li>
+                      <li><a href="jspc.html">Custom tag libraries</a></li>
+    		
+		</ul>
+    </li>
+   
+   
+
+ <li><a href="#">Tasks</a>
+               <ul>
+                	<li><a href="Googlemap.html">Map</a></li>
+                    <li><a href="Googlepage.html">Google Page</a></li>
+                    <li><a href="arm.html">Control Statements</a></li>
+                     <li><a href="formv.html">Form Validation</a></li>
+                      <li><a href="refresh.html">Refresh</a></li>
+                      <li><a href="calc.html">Calculator</a></li>
+                      <li><a href="switch.html">Switch</a></li>
+					   
+                </ul>
+            
+
+                  </li>
+<li><a href="#" class="margin_l10">Resume</a></li>
+
+<li><a href="websphere.html" class="margin_l10">WebSphere</a></li>
+</ul>
+<br style="clear: left" />
+</div>
+
+        </div>
+        
+        <div id="templatemo_banner">
+        
+	        <div id="site_title">
+                <h1><a href="http://www.templatemo.com" target="_parent">
+                <!--
+                Colorful Blog
+                <span>your tagline goes here</span>
+                -->
+                <!--<img src="images/templatemo_logo.png" alt="site logo" />-->
+                    <h1>WEB TECHNOLOGIES</h1>
+              <!--  <span>free website layout for blog themes</span>-->
+                
+                </a></h1>
+			</div>
+         <table border="4" style="color:white;" align="center"  colspan="3" rowspan="3">
+	<tr>
+		<th id="li">Tag</th>
+		 <th id="li">Description</th>
+	</tr>
+	<tr>
+		<td id="li2">HTML</td> <td id="li2">Defines the root of an HTML document</td>
+	</tr>
+	<tr>		s
+		<td id="li">!DOCTYPE</td> <td id="li">Defines the document type</td>
+	</tr>
+	<tr>
+		<td id="li2">a </td> <td id="li2"><a href="www.google.com">Defines a hyperlink</a></td>
+	</tr>
+	<tr>		
+		<td id="li">area</td> <td id="li">Defines an area inside an image-map</td>
+	</tr>
+	<tr>
+		<td id="li2">li </td> <td id="li2">Defines a list item </td>
+	</tr>
+	<tr>		
+		<td id="li">audio</td> <td id="li">Defines sound content</td>
+	</tr>
+	<tr>
+		<td id="li2">b</td> <td id="li2"><b>Defines bold text</b></td>
+	</tr>
+	<tr>		
+		<td id="li">body</td> <td id="li">Defines the document's body</td>
+	</tr>
+	<tr>
+		<td id="li2">br</td> <td id="li2">Defines <br>a single line break</td>
+	</tr>
+	<tr>		
+		<td id="li">button</td> <td id="li"><button>click me!</button></td>
+	</tr>
+	<tr>
+		<td id="li2">datalist</td> <td id="li2">Specifies a list of pre-defined options for input controls</td>
+	</tr>
+	<tr>		
+		<td id="li">dd</td> <td id="li">Defines a description/value of a term in a description list</td>
+	</tr>
+	<tr>
+		<td id="li2">del</td> <td id="li2"><del>Defines text that has been deleted from a document</del></td>
+	</tr>
+	<tr>		
+		<td id="li">dialog</td> <td id="li">Defines a description/value of a term in a description list</td>
+	</tr>
+	<tr>
+		<td id="li2">div</td> <td id="li2">Defines a section in a document</td>
+	</tr>
+	<tr>		
+		<td id="li">dl</td> <td id="li">Defines a description list</td>
+	</tr>
+	<tr>
+		<td id="li2">dt</td> <td id="li2">Defines a term/name in a description list</td>
+	</tr>
+	<tr>		
+		<td id="li">em</td> <td id="li"><em>Defines emphasized text</em></td>
+	</tr>
+	<tr>
+		<td id="li2">fieldset</td> <td id="li2">Groups related elements in a form</td>
+	</tr>
+	<tr>		
+		<td id="li">footer</td> <td id="li"><footer>Defines a footer for a document or section</footer></td>
+	</tr>
+	<tr>
+		<td id="li2">form</td> <td id="li2">Defines an HTML form for user input</td>
+	</tr>
+	<tr>		
+		<td id="li">h1 to h6</td> <td id="li">Defines HTML headings </td>
+	</tr>
+	<tr>
+		<td id="li2">head</td> <td id="li2"><head>Defines information about the document</head></td>
+	</tr>
+	<tr>		
+		<td id="li">i</td> <td id="li"><i>Defines a part of text in an alternate voice or mood</i></td>
+	</tr>
+	<tr>
+		<td id="li2">iframe</td> <td id="li2">Defines an inline frame</td>
+	</tr>
+	<tr>		
+		<td id="li">img</td> <td id="li">Defines an image<img src="html.png" height="100" width="100"></td>
+	</tr>
+	<tr>
+		<td id="li2">ins</td> <td id="li2"><ins>Defines a text that has been inserted into a document</ins></td>
+	</tr>
+	<tr>		
+		<td id="li">legend</td> <td id="li"><form>
+  <fieldset>
+    <legend>Personalise:</legend>
+    Name: <input type="text" size="30"><br>
+    Email: <input type="text" size="30"><br>
+    Date of birth: <input type="text" size="10">
+  </fieldset>
+</form></td>
+	</tr>
+	<tr>
+		<td id="li2">link</td> <td id="li2">Defines the relationship between a document and <br>an external resource (most used to link to style sheets) </td>
+	</tr>
+	<tr>		
+		<td id="li">map</td> <td id="li">Defines a client-side image-map</td>
+	</tr>
+	<tr>
+		<td id="li2">meta</td> <td id="li2">Defines metadata about an HTML document</td>
+	</tr>
+	<tr>		
+		<td id="li">nav</td> <td id="li">Defines navigation links</td>
+	</tr>
+	<tr>
+		<td id="li2">ol</td> <td id="li2">Defines an option in a drop-down list</td>
+	</tr>
+	<tr>		
+		<td id="li">option</td> <td id="li">Defines the root of an HTML document</td>
+	</tr>
+	<tr>
+		<td id="li2">p</td> <td id="li2">Defines a paragraph</td>
+	</tr>
+	<tr>		
+		<td id="li">pre</td> <td id="li">Defines preformatted text</td>
+	</tr>
+	<tr>
+		<td id="li2">progress</td> <td id="li2"><progress value="75" max="100">Represents the progress of a task </progress></td>
+	</tr>
+	<tr>		
+		<td id="li">q</td> <td id="li"><q>Defines a short quotation</q></td>
+	</tr>
+	<tr>
+		<td id="li2">s</td> <td id="li2"><s>Defines text that is no longer correct</s></td>
+	</tr>
+	<tr>		
+		<td id="li">script</td> <td id="li">Defines a client-side script</td>
+	</tr>
+	<tr>
+		<td id="li2">select</td> <td id="li2">Defines a drop-down list</td>
+	</tr>
+	<tr>		
+		<td id="li">small</td> <td id="li"><small> Defines smaller text</small></td>
+	</tr>
+	<tr>
+		<td id="li2">source</td> <td id="li2">Defines multiple media resources for media elements</td>
+	</tr>
+	<tr>		
+		<td id="li">span</td> <td id="li">Defines a section in a document</td>
+	</tr>
+	<tr>
+		<td id="li2">strong</td> <td id="li2"><strong>Defines important text</strong></td>
+	</tr>
+	<tr>		
+		<td id="li">style</td> <td id="li">Defines style information for a document</td>
+	</tr>
+	<tr>
+		<td id="li2">sub</td> <td id="li2"><sub>Defines</sub>subscripted text</td>
+	</tr>
+	<tr>		
+		<td id="li">sup</td> <td id="li"><sup>Defines</sup> superscripted text</td>
+	</tr>
+	<tr>
+		<td id="li2">table</td> <td id="li2">Defines a table </td>
+	</tr>
+	<tr>		
+		<td id="li">tbody</td> <td id="li">Groups the body content in a table</td>
+	</tr>
+	<tr>
+		<td id="li2">td</td> <td id="li2">Defines a cell in a table</td>
+	</tr>
+	<tr>		
+		<td id="li">textarea</td> <td id="li">Defines a multiline input control (text area)</td>
+	</tr>
+	<tr>
+		<td id="li2">tfoot</td> <td id="li2">Groups the footer content in a table</td>
+	</tr>
+	<tr>		
+		<td id="li">th</td> <td id="li">Defines a header cell in a table</td>
+	</tr>
+	<tr>
+		<td id="li2">thead</td> <td id="li2">Groups the header content in a table</td>
+	</tr>
+	<tr>		
+		<td id="li">title</td> <td id="li">Defines a title for the document</td>
+	</tr>
+	<tr>
+		<td id="li2">tr</td> <td id="li2">Defines a row in a table</td>
+	</tr>
+	<tr>		
+		<td id="li">u</td> <td id="li"><u>Defines text that should be stylistically different from normal text</u></td>
+	</tr>
+	<tr>
+		<td id="li2">ul</td> <td id="li2">Defines an unordered list</td>
+	</tr>
+	<tr>		
+		<td id="li">video</td> <td id="li">Defines a video or movie</td>
+	</tr>
+	
+</table>
+			
+			
+			
+
+                
+               
+<div align=center>This template Is implemented by <a href='http://all-free-download.com/free-website-templates/'>Janaki Ramadu</a></div></body>
+</html>

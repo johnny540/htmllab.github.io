@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Web Technology</title>
+<meta name="keywords" content="Wooden Blog Template, HTML, CSS" />
+<meta name="description" content="Wooden Blog Template, HTML CSS layout available for free of charge" />
+<link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="jquerycssmenu.css" />
+
+<!--[if lte IE 7]>
+<style type="text/css">
+html .jquerycssmenu{height: 1%;} /*Holly Hack for IE7 and below*/
+</style>
+<![endif]-->
+
+<script type="text/javascript" src="js/jquery.min.1.2.6.js"></script>
+<script type="text/javascript" src="js/jquerycssmenu.js"></script>
+<script type="text/javascript" src="js/jquery.min.1.3.2.js"></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+  var currentPosition = 0;
+  var slideWidth = 750;
+  var slides = $('.slide');
+  var numberOfSlides = slides.length;
+
+  // Remove scrollbar in JS
+  $('#slidesContainer').css('overflow', 'hidden');
+
+  // Wrap all .slides with #slideInner div
+  slides
+    .wrapAll('<div id="slideInner"></div>')
+    // Float left to display horizontally, readjust .slides width
+	.css({
+      'float' : 'left',
+      'width' : slideWidth
+    });
+
+  // Set #slideInner width equal to total width of all slides
+  $('#slideInner').css('width', slideWidth * numberOfSlides);
+
+  // Insert controls in the DOM
+  $('#slideshow')
+    .prepend('<span class="control" id="leftControl">Clicking moves left</span>')
+    .append('<span class="control" id="rightControl">Clicking moves right</span>');
+
+  // Hide left arrow control on first load
+  manageControls(currentPosition);
+
+  // Create event listeners for .controls clicks
+  $('.control')
+    .bind('click', function(){
+    // Determine new position
+	currentPosition = ($(this).attr('id')=='rightControl') ? currentPosition+1 : currentPosition-1;
+    
+	// Hide / show controls
+    manageControls(currentPosition);
+    // Move slideInner using margin-left
+    $('#slideInner').animate({
+      'marginLeft' : slideWidth*(-currentPosition)
+    });
+  });
+
+  // manageControls: Hides and Shows controls depending on currentPosition
+  function manageControls(position){
+    // Hide left arrow if position is first slide
+	if(position==0){ $('#leftControl').hide() } else{ $('#leftControl').show() }
+	// Hide right arrow if position is last slide
+    if(position==numberOfSlides-1){ $('#rightControl').hide() } else{ $('#rightControl').show() }
+  }	
+});
+</script>
+</head>
+<body>
+<div id="templatemo_top_panel_wrapper_outter">
+<div id="templatemo_top_panel_wrapper_inner">
+	<div id="templatemo_top_panel">
+    	<div id="templatemo_menu">
+
+<div id="myjquerymenu" class="jquerycssmenu">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a class="has_submenu" href="#">Unit1</a>
+            	<ul>
+                	<li><a href="tabled.html">Html Tags</a></li>
+                    <li><a href="form.html">Forms</a></li>
+                    <li><a href="tabled.html">Tables</a></li>
+                       <li><a href="#">Frames</a></li>
+                      <li><a href="img.html">Images</a></li>
+                      <li><a href="attx.html">Xml</a></li>
+                         <li><a href="script.html">Javascript</a></li>
+                       
+                </ul>
+            </li>
+	
+<li><a href="hello.html">Java</a>
+
+</li>
+<li><a href="#" class="margin_l10">Servers</a>
+<ul>
+   <li><a href="pws.html">Pws</a></li>
+                    <li><a href="iis.html">iis</a></li>
+                    <li><a href="tom.html">Tomcat</a></li>
+                     <li><a href="apache.html">Apache</a></li>
+                     <li><a href="#">Program</a></ul></li>
+<li><a href="#">Jsp</a>
+  <ul>
+  
+                	<li><a href="jsp.html">Jsp page</a></li>
+                    <li><a href="djsp.html">Deployment of Jsp</a></li>
+                    <li><a href="jelements.html">Jsp Elements</a></li>
+                     <li><a href="jspd.html">Jsp Directives</a></li> 
+                     <li><a href="jspconn.html">Jsp Connection</a></li>
+                      <li><a href="#">Java Bean</a></li>
+                      <li><a href="jspc.html">Custom tag libraries</a></li>
+    		
+		</ul>
+    </li>
+   
+   
+
+ <li><a href="#">Tasks</a>
+               <ul>
+                	<li><a href="Googlemap.html">Map</a></li>
+                    <li><a href="Googlepage.html">Google Page</a></li>
+                    <li><a href="arm.html">Control Statements</a></li>
+                     <li><a href="formv.html">Form Validation</a></li>
+                      <li><a href="refresh.html">Refresh</a></li>
+                      <li><a href="calc.html">Calculator</a></li>
+                      <li><a href="switch.html">Switch</a></li>
+					   
+                </ul>
+            
+
+                  </li>
+<li><a href="#" class="margin_l10">Resume</a></li>
+
+<li><a href="websphere.html" class="margin_l10">WebSphere</a></li>
+</ul>
+<br style="clear: left" />
+</div>
+
+        </div>
+        
+        <div id="templatemo_banner">
+        
+	        <div id="site_title">
+                <h1><a href="http://www.templatemo.com" target="_parent">
+                <!--
+                Colorful Blog
+                <span>your tagline goes here</span>
+                -->
+                <!--<img src="images/templatemo_logo.png" alt="site logo" />-->
+                    <h1>WEB TECHNOLOGIES</h1>
+              <!--  <span>free website layout for blog themes</span>-->
+                
+                </a></h1>
+			</div>
+
+		<div class="center">
+            <center><h2>PWS Server Installation Process</h2>
+
+                 <pre>Visual Studio 6.0<br>
+The first thing you must do is install the free Microsoft Personal Web Server. If you have the Windows NT4 Option <br>Pack CD you can install from there. If you haven't got the disk, you can get hold of PWS by logging on to Bill's <br>homepage and downloading the PWS software from there:<br>
+Try It Out - Downloading PWS<br>
+1.  Fire up your web browser of choice and go to the following URL:<br>
+http://www.microsoft.com/ie/sitemap<br>
+2.  When the web page has loaded, click Downloads, and then click the Personal Web Server choice.<br>
+3.  On the next screen, choose Personal Web Server 4.0 for Windows or NT 4.0 (Part of the NT 4.0 Options Pack). Click <br>the Next button. The Microsoft Windows NT 4.0 Option Pack screen is then displayed. Yes, this is under Windows <br>NT – go figure!<br>
+4.  Click the Download button on the right hand side of the screen. The Windows NT 4.0 Option Pack screen is <br>displayed. You will be asked to answer a few questions. There are two pages of questions. Once answered, press <br>Next.<br>
+5.  On the third page, you will be asked "Which components of the Windows NT 4.0 Option Pack do you intend to <br>download today?" Check the box for "Microsoft Windows NT 4.0 Service Pack 3" and click the Finish button.<br>
+6.  On the next page, the Windows NT 4.0 Option Pack page presents two options for downloading. Click Option 1. <br>This will auto-install the software for you. Follow through the rest of the steps as directed.<br>
+Note: You will see " Reminder: The Windows NT 4.0 Option Pack requires Microsoft Internet Explorer 4.01 or later and <br>Windows NT 4.0 Service Pack 3." Don't worry if you are running Windows 95/98. This is the right place. But be <br>sure to download the latest version of the Internet Explorer – 4.01. Again, this is also free.<br>
+7.  Be sure to remember the directory the download.exe file is being downloaded to. It will take about 5 minutes <br>or less. When the download is complete use the Windows File Explorer to find the file, download.exe, and <br>double click. Be sure to stay connected to the Internet. This is the program that will handle the automatic <br>installation for you. When you double click, you will see the licensing screen:<br>
+</pre><br>
+                     <img src="images/pws1.jpg"><br>
+               <pre>8.  Read the agreement and click OK. This will start the process.<br>
+The good news is that this great piece of software is free – the bad news is that it could take over 4 hours to <br>download – this depends on the speed of your Internet connection. Also, if you have the NT4 Option Pack CD, <br>you can install PWS directly from that. But the time spent is well worth the wait:<br>
+</pre><br>
+                     <img src="images/pws2.jpg"><br>
+              <pre>You might as well get a cup of coffee and read through the rest of the chapter while this is downloading. The set up <br>will painlessly guide you through the process.<br>
+9.  When all the installation files have downloaded, you'll be presented with the install screen shown below:<br>
+</pre><br>
+                     <img src="images/pws3.jpg"><br>
+               <p>10.  Simply follow the instructions on the screen and the software will install itself on your machine:</p><br>
+                     <img src="images/pws4.jpg"><br>
+               <pre>Depending on how your machine is set up, you may need to go through the following steps too:<br><br>
+11.  Go to Network in the Control Panel in Windows and press Add, select Service:
+</pre><br>
+                     <img src="images/pws5.jpg"><br>
+               <pre>Press Add, select Microsoft from the Manufacturers column, double click on Personal Web Server, and press OK on <br>the network control panel:</pre><br>
+                     <img src="images/pws6.jpg"><br>
+               <pre>12.  When the download is complete, all that is left is for us is to start up the Personal Web Server. The installation<br> process will have added a new icon on your task bar – usually it will be next to the time display. Click on the icon (or <br> start PWS up from Start | Programs, and the Main window for the server will be displayed. Press the Start button:</pre><br>
+                     <img src="images/pws7.jpg"><br>
+               <pre>PWS will now allow you to publish ASP pages.<br>
+Notice that the name of your computer is available in the Publishing frame. My computer is named 'buckaroo', so my <br>web site is http://buckaroo. However, if you don't have a dedicated Internet connection and use a dial up <br>service such as AOL, Netcom, Mindscape, or some other Internet Service Provider, you are actually provided an <br>Internet address each and every time you log on. Why? Because every computer connected to the Internet <br>needs an address. However, each time you log on, the address is different. The network provider has a bunch of <br>numbers reserved and issues you a new one each time you long on.<br>
+This 32-bit number used for the address is given to you for the duration of your connection. If you are interested in <br>seeing the number, simply run Winipcfg.exe from the Windows Start-Run box. This will bring up a handy <br>utility showing the current Internet Provider (IP) address. You don't need to know it, but it's fun to see the <br>connection. From it, I can see that my IP Address for the current session is 206.217.104.199. Now if you wish <br>friends to log in to your computer over the Internet to test out the ASP pages on your PC, you can give them <br>this IP address and they can access the ASP pages you create. They would simply <br>put http://206.217.104.199/myPage.asp in their browser and would see your cool page from their <br>machine. Of course, you have to check the IP address each and every time you log in because it will be different:<br>
+</pre><br>
+                     <img src="images/pws8.jpg"><br>
+ <pre>So you can see that by loading up PWS you are turning your PC into a server.</pre>
+
+
+</center>	
+              
+			
+			
+
+                
+               
+<div align=center>This template Is implemented by <a href='http://all-free-download.com/free-website-templates/'>Janaki Ramadu</a></div></body>
+</html>

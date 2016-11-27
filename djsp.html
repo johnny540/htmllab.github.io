@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Web Technology</title>
+<meta name="keywords" content="Wooden Blog Template, HTML, CSS" />
+<meta name="description" content="Wooden Blog Template, HTML CSS layout available for free of charge" />
+<link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="jquerycssmenu.css" />
+
+<!--[if lte IE 7]>
+<style type="text/css">
+html .jquerycssmenu{height: 1%;} /*Holly Hack for IE7 and below*/
+</style>
+<![endif]-->
+
+<script type="text/javascript" src="js/jquery.min.1.2.6.js"></script>
+<script type="text/javascript" src="js/jquerycssmenu.js"></script>
+<script type="text/javascript" src="js/jquery.min.1.3.2.js"></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+  var currentPosition = 0;
+  var slideWidth = 750;
+  var slides = $('.slide');
+  var numberOfSlides = slides.length;
+
+  // Remove scrollbar in JS
+  $('#slidesContainer').css('overflow', 'hidden');
+
+  // Wrap all .slides with #slideInner div
+  slides
+    .wrapAll('<div id="slideInner"></div>')
+    // Float left to display horizontally, readjust .slides width
+	.css({
+      'float' : 'left',
+      'width' : slideWidth
+    });
+
+  // Set #slideInner width equal to total width of all slides
+  $('#slideInner').css('width', slideWidth * numberOfSlides);
+
+  // Insert controls in the DOM
+  $('#slideshow')
+    .prepend('<span class="control" id="leftControl">Clicking moves left</span>')
+    .append('<span class="control" id="rightControl">Clicking moves right</span>');
+
+  // Hide left arrow control on first load
+  manageControls(currentPosition);
+
+  // Create event listeners for .controls clicks
+  $('.control')
+    .bind('click', function(){
+    // Determine new position
+	currentPosition = ($(this).attr('id')=='rightControl') ? currentPosition+1 : currentPosition-1;
+    
+	// Hide / show controls
+    manageControls(currentPosition);
+    // Move slideInner using margin-left
+    $('#slideInner').animate({
+      'marginLeft' : slideWidth*(-currentPosition)
+    });
+  });
+
+  // manageControls: Hides and Shows controls depending on currentPosition
+  function manageControls(position){
+    // Hide left arrow if position is first slide
+	if(position==0){ $('#leftControl').hide() } else{ $('#leftControl').show() }
+	// Hide right arrow if position is last slide
+    if(position==numberOfSlides-1){ $('#rightControl').hide() } else{ $('#rightControl').show() }
+  }	
+});
+</script>
+</head>
+<body>
+<div id="templatemo_top_panel_wrapper_outter">
+<div id="templatemo_top_panel_wrapper_inner">
+	<div id="templatemo_top_panel">
+    	<div id="templatemo_menu">
+
+<div id="myjquerymenu" class="jquerycssmenu">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a class="has_submenu" href="#">Unit1</a>
+            	<ul>
+                	<li><a href="tabled.html">Html Tags</a></li>
+                    <li><a href="form.html">Forms</a></li>
+                    <li><a href="tabled.html">Tables</a></li>
+                       <li><a href="#">Frames</a></li>
+                      <li><a href="img.html">Images</a></li>
+                      <li><a href="attx.html">Xml</a></li>
+                         <li><a href="script.html">Javascript</a></li>
+                       
+                </ul>
+            </li>
+	
+<li><a href="hello.html">Java</a>
+
+</li>
+<li><a href="#" class="margin_l10">Servers</a>
+<ul>
+   <li><a href="pws.html">Pws</a></li>
+                    <li><a href="iis.html">iis</a></li>
+                    <li><a href="tom.html">Tomcat</a></li>
+                     <li><a href="apache.html">Apache</a></li>
+                     <li><a href="#">Program</a></ul></li>
+<li><a href="#">Jsp</a>
+  <ul>
+  
+                	<li><a href="jsp.html">Jsp page</a></li>
+                    <li><a href="djsp.html">Deployment of Jsp</a></li>
+                    <li><a href="jelements.html">Jsp Elements</a></li>
+                     <li><a href="jspd.html">Jsp Directives</a></li> 
+                     <li><a href="jspconn.html">Jsp Connection</a></li>
+                      <li><a href="#">Java Bean</a></li>
+                      <li><a href="jspc.html">Custom tag libraries</a></li>
+    		
+		</ul>
+    </li>
+   
+   
+
+ <li><a href="#">Tasks</a>
+               <ul>
+                	<li><a href="Googlemap.html">Map</a></li>
+                    <li><a href="Googlepage.html">Google Page</a></li>
+                    <li><a href="arm.html">Control Statements</a></li>
+                     <li><a href="formv.html">Form Validation</a></li>
+                      <li><a href="refresh.html">Refresh</a></li>
+                      <li><a href="calc.html">Calculator</a></li>
+                      <li><a href="switch.html">Switch</a></li>
+					   
+                </ul>
+            
+
+                  </li>
+<li><a href="#" class="margin_l10">Resume</a></li>
+
+<li><a href="websphere.html" class="margin_l10">WebSphere</a></li>
+</ul>
+<br style="clear: left" />
+</div>
+
+        </div>
+        
+        <div id="templatemo_banner">
+        
+	        <div id="site_title">
+                <h1><a href="http://www.templatemo.com" target="_parent">
+                <!--
+                Colorful Blog
+                <span>your tagline goes here</span>
+                -->
+                <!--<img src="images/templatemo_logo.png" alt="site logo" />-->
+                    <h1>WEB TECHNOLOGIES</h1>
+              <!--  <span>free website layout for blog themes</span>-->
+                
+                </a></h1>
+			</div>
+            
+         <center><h2>Deployment of Jsp Page</h2>
+           <h3>This post will give you description about how you can run your project using Apache Tomcat Server.<br>
+I would like to define these terms before proceeding:<br>
+Apache Tomcat Server(Jakarta Tomcat): It is an open source web server and servlet container<br>
+developed by the Apache Software Foundation (ASF). It implements the Java Servlet and the<br>
+JavaServer Pages (JSP) specifications and provides a pure Java HTTP web server environment for<br>
+java code to run.<br>
+JavaServerPages(JSP): It is a technology that helps in creating dynamically generated web pages.<br>
+</h3><br>
+<h1>Step1</h1><br>
+<h3>Install Java.</h3><br>
+   <h1>Step2</h1><br>
+   <h3>Install Apache Tomcat<br>
+At the time of installation, it will by-default recognize JRE path.<br>
+(under installed java location directory)</h3><br>            
+<h1>Step3</h1><br>
+   <h3>Start<br>
+Programs<br>
+APACHE TOMCAT<br>
+MONITOR TOMCAT</h3><br> 
+ <img src="images/dj1.jpg"  ><br>
+<h1>Step4</h1><br>
+<h3>An icon will appear on the taskbar, this icon will automatically appear after following above step:</h3><br> 
+ <img src="images/dj2.jpg"  ><br>
+<h1>Step5</h1><br>
+<h3>Click on that icon and START TOMCAT, you can see the following dialog box:</h3><br> 
+ <img src="images/dj3.jpg"  ><br>
+<h1>Step6</h1><br>
+<h3>Now open Mozilla Firefox(or any other browser)</h3><br> 
+<h1>Step7</h1><br>
+<h3>Type http://localhost:8080/ on address bar and press enter.<br>The same can be seen here:</h3><br> 
+ <img src="images/dj4.jpg"  ><br>
+<h1>Step8</h1><br>
+<h3>It will show tomcat, as shown in above window.<br>
+(if not, then try again, may be a problem in installation or you’re not following above steps correctly</h3><br> 
+<h1>Step9</h1><br>
+<h3>Now, go to:<br>
+C:drive<br>
+Programs Files<br>
+Apache Software Foundation<br>
+tomcat<br>
+web-apps<br>
+(or navigate where you have installed APACHE TOMCAT)</h3><br> 
+<h1>Step10</h1><br>
+<h3>Open web-apps and “copy your project” or “make new folder”, which you want to run in JSP.<br>
+Example: amit2012PROJECT<br>
+Now, go back :<br>
+Tomcat<br>
+Root<br>Copy Web-inf from root<br>
+Paste this “web-inf” in your project folder i.e. amit2012PROJECT</h3><br> 
+
+<h1>Step11</h1><br>
+ <img src="images/dj5.jpg"  ><br>
+<h3>It includes HTML tags and encloses a JSP scriptlet which is a fragment of Java code that is run when the<br>
+user requests the page.</h3><br>
+<h1>Step12</h1><br>
+<h3>Now for running your folder [ Eg. amit2012PROJECT as shown above]<br>
+http://localhost:8080/foldername.extension in any WebBrowser i.e:<br>
+http://localhost:8080/amit2012PROJECT/first.jsp<br>
+The Project will run successfully, as shown below:</h3><br> 
+ <img src="images/dj6.jpg"  ><br>
+<h3>Now, you can successfully try running JSP with ApacheTomcatServer</h3>
+</center>
+
+                
+               
+<div align=center>This template Is implemented by <a href='http://all-free-download.com/free-website-templates/'>Janaki Ramadu</a></div></body>
+</html>
